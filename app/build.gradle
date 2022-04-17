@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -32,6 +34,39 @@ android {
 }
 
 dependencies {
+    def retrofit_version = "2.9.0"
+    def nav_version = "2.4.2"
+    def hilt_version = "2.41"
+    def coroutine_version = "1.6.0"
+
+    // retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    // socket
+    implementation('io.socket:socket.io-client:2.0.1') {
+        exclude group: 'org.json', module: 'json'
+    }
+
+    // hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    testImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
+    testAnnotationProcessor "com.google.dagger:hilt-compiler:$hilt_version"
+
+    // navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+
+    // coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
+
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+    implementation 'androidx.fragment:fragment-ktx:1.4.1'
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
