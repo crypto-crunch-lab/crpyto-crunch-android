@@ -24,6 +24,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    buildFeatures {
+        dataBinding true
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -38,6 +41,11 @@ dependencies {
     def nav_version = "2.4.2"
     def hilt_version = "2.41"
     def coroutine_version = "1.6.0"
+
+    // add data, domain dependencies
+    implementation project(':data')
+    implementation project(':domain')
+
 
     // retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"

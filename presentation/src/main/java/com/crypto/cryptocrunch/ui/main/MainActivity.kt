@@ -1,7 +1,8 @@
-package com.crypto.cryptocrunch
+package com.crypto.cryptocrunch.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.crypto.cryptocrunch.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
