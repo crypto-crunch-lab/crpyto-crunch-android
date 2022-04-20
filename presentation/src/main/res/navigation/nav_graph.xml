@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.crypto.cryptocrunch.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/myPageFragment"
+        android:name="com.crypto.cryptocrunch.ui.mypage.MyPageFragment"
+        android:label="MyPageFragment"
+        tools:layout="@layout/fragment_my_page" >
+        <action
+            android:id="@+id/action_myPageFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/defiFragment"
+        android:name="com.crypto.cryptocrunch.ui.defi.DefiFragment"
+        android:label="DefiFragment"
+        tools:layout="@layout/fragment_my_page" >
+        <action
+            android:id="@+id/action_DefiFragment_to_homeFragment"
+            app:destination="@id/myPageFragment" />
+    </fragment>
+
+</navigation>
