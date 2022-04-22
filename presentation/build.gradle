@@ -41,6 +41,7 @@ dependencies {
     def nav_version = "2.4.2"
     def hilt_version = "2.41"
     def coroutine_version = "1.6.0"
+    def okhttp3_version = "3.11.0"
 
     // add data, domain dependencies
     implementation project(':data')
@@ -50,6 +51,10 @@ dependencies {
     // retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    // okhttp3
+    implementation "com.squareup.okhttp3:okhttp:$okhttp3_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3_version"
 
     // socket
     implementation('io.socket:socket.io-client:2.0.1') {
