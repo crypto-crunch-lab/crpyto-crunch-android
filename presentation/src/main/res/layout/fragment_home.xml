@@ -5,24 +5,82 @@
     <data>
         <variable
             name="vm"
-            type="com.crypto.cryptocrunch.ui.home.DefiViewModel" />
-
+            type="com.crypto.cryptocrunch.ui.home.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@color/design_default_color_primary"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#fff111">
+
+        <FrameLayout
+            android:id="@+id/layout_start_lily"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="30dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:padding="2dp"
+            android:background="@drawable/ic_launcher_foreground"
+            android:elevation="5dp">
+            <ImageView
+                android:id="@+id/iv_start_lily"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside" />
+        </FrameLayout>
 
         <TextView
-            android:id="@+id/tv_hello"
+            android:id="@+id/tv_start_lily"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Home TEXT"
+            android:layout_marginStart="10dp"
+            android:text="Crypto"
+            android:textSize="27dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tv_start_info"
+            app:layout_constraintStart_toEndOf="@id/layout_start_lily"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tv_start_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="TEST"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/layout_start_lily"
+            app:layout_constraintStart_toStartOf="@id/tv_start_lily"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <CheckBox
+            android:gravity="center"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:id="@+id/cb_start_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toEndOf="@id/btn_start"
+            app:layout_constraintBottom_toTopOf="@id/btn_start"
+            android:textSize="12dp"
+            android:onCheckedChanged="@{(compoundButton, checked)-> vm.skipCheckChanged(compoundButton, checked)}"
+            android:text="다음부터 보지 않기" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            app:layout_constraintVertical_chainStyle="packed"
+            android:id="@+id/btn_start"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:scaleType="centerCrop"
+            android:text="시작하기"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
