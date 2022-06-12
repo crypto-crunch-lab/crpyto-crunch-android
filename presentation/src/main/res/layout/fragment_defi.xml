@@ -6,25 +6,19 @@
         <variable
             name="vm"
             type="com.crypto.cryptocrunch.ui.home.DefiViewModel" />
-
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="#ffffff"
+        android:background="#18171E"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/tv_hello"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Defi Fragment"
-            android:textColor="#111111"
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/combinedChart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
