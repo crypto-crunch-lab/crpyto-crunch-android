@@ -1,16 +1,16 @@
-package com.crypto.cryptocrunch.di.api
+package com.crypto.cryptocrunch.data.di.api
 
+import com.crypto.cryptocrunch.di.api.CryptoService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {
-    // Crypto BaseURL
-    var BASE_URL = ""
+    var BASE_URL = "http://server.crypto-crunch-tech.com:8080"
     private var retrofit: Retrofit? = null
 
-    fun provideCryptoApi(): CryptoApi = getRetrofit().create(CryptoApi::class.java)
+    fun provideCryptoService(): CryptoService = getRetrofit().create(CryptoService::class.java)
 
     fun getRetrofit(): Retrofit {
         if (retrofit == null) {
